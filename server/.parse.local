@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "HeartBeat": {
+      "applicationId": "UcHj1aEORkIIuaSkgnn3yIXnxN0ocKh0aCKXj879"
+    },
+    "_default": {
+      "link": "HeartBeat"
+    }
+  }
+}
