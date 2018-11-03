@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">HeartBeat</string>
+    <string name="back4app_client_key">Kc3AVCFKvKl5toySN0cYQPknnUpPlZCztfVAIzyA</string>
+    <string name="back4app_app_id">UcHj1aEORkIIuaSkgnn3yIXnxN0ocKh0aCKXj879</string>
+    <string name="back4app_server_url">https://parseapi.back4app.com/</string>
+</resources>

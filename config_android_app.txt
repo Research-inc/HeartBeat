@@ -1,0 +1,103 @@
+
+onCreate() - Mainactivity:
+
+        Parse.initialize(new Parse.Configuration.Builder(this)
+                .applicationId("UcHj1aEORkIIuaSkgnn3yIXnxN0ocKh0aCKXj879")
+                .clientKey("Kc3AVCFKvKl5toySN0cYQPknnUpPlZCztfVAIzyA")
+                .server("https://parseapi.back4app.com/").build()
+        );
+
+// This is the installation part
+        ParseInstallation installation = ParseInstallation.getCurrentInstallation();
+        installation.put("GCMSenderId", "249670415353");
+        installation.saveInBackground();
+
+		
+		
+		
+		
+MODULE GRADLE:
+		dependencies:
+		
+	implementation 'com.parse:parse-android:1.16.3'
+    implementation 'com.parse.bolts:bolts-android:1.+'
+    implementation 'com.parse:parse-android:1.+'
+    implementation 'com.google.firebase:firebase-core:16.0.1'
+    implementation 'com.google.firebase:firebase-messaging:10.0.1'
+
+	
+	repositories {
+    mavenCentral()
+    jcenter()
+    maven {
+        url "http://maven.google.com"
+    }
+}
+apply plugin: 'com.google.gms.google-services'
+
+PROJECT GRADLE:
+buildscript {
+    
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.4'
+        classpath 'com.google.gms:google-services:4.0.1'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+Android manifest:
+
+before application tag
+<uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <permission android:name="com.example.sreeram.heartbeat.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="com.example.sreeram.heartbeat.permission.C2D_MESSAGE" />
+    
+After activity tag;
+        <meta-data
+            android:name="com.parse.SERVER_URL"
+            android:value="@string/back4app_server_url" />
+        <meta-data
+            android:name="com.parse.APPLICATION_ID"
+            android:value="@string/back4app_app_id" />
+        <meta-data
+            android:name="com.parse.CLIENT_KEY"
+            android:value="@string/back4app_client_key" />
+        <meta-data android:name="com.parse.push.gcm_sender_id"
+            android:value="id:249670415353" />
+        <service android:name="com.parse.PushService" />
+        <receiver android:name="com.parse.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+                <category android:name="com.example.sreeram.heartbeat" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.parse.ParsePushBroadcastReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="com.parse.push.intent.RECEIVE" />
+                <action android:name="com.parse.push.intent.OPEN" />
+                <action android:name="com.parse.push.intent.DELETE" />
+            </intent-filter>
+        </receiver>
+
+

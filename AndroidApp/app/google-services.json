@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "249670415353",
+    "firebase_url": "https://heartbeat-e18b9.firebaseio.com",
+    "project_id": "heartbeat-e18b9",
+    "storage_bucket": "heartbeat-e18b9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:249670415353:android:0064763a71eef104",
+        "android_client_info": {
+          "package_name": "com.example.sreeram.heartbeat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "249670415353-35o02d8a02015ob6b9n65cnl390rguks.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSUHS-oSrwBfxl2L0Dm4noPnh9RGxLGWs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
